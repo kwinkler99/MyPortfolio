@@ -1,5 +1,9 @@
 import Navbar from "./components/navbar";
 import AboutMe from "./components/aboutme";
+import Resume from "./components/resume";
+import Links from "./components/links";
+import Contact from "./components/contact";
+
 
 function App() {
   return (
@@ -7,6 +11,9 @@ function App() {
       <Navbar />
       <div>
         <AboutMe />
+        <Resume />
+        <Links />
+        <Contact />
       </div>
     </div>
   );

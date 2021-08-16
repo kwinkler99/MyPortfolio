@@ -1,12 +1,5 @@
 import {navbar} from '../data/data.js' 
-
-const nav_style = {
-    background: 'rgb(253, 253, 253)',
-    display: 'flex',
-    padding: '5px',
-    justifyContent: 'space-between',
-    alignItems: 'center'
-}
+import '../style/navbar.scss'
 
 function Navbar() {
     const buttons = navbar.buttons.map(item => {
@@ -14,11 +7,9 @@ function Navbar() {
     })
 
     return (
-        <nav style={nav_style} className="Nav">
-            <strong>KATARZYNA WINKLER</strong>
-            <div style={{
-                ...nav_style,
-                }}>
+        <nav className="nav">
+            <strong style={{marginLeft: '10px'}}>KATARZYNA WINKLER</strong>
+            <div className="nav-buttons">
                 {buttons}                
             </div>
         </nav>

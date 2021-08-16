@@ -1,0 +1,19 @@
+%nav_style {
+    background: rgb(250, 250, 250);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav{
+    @extend %nav_style;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 60px;
+}
+
+.nav-buttons{
+    @extend %nav_style;
+}
