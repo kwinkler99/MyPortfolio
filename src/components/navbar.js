@@ -3,7 +3,7 @@ import '../style/navbar.scss'
 
 function Navbar() {
     const buttons = navbar.buttons.map(item => {
-        return <p style={{margin: '10px'}}>{item}</p>
+        return <a href={"#" + item.id} key={item.id}>{item.text}</a>
     })
 
     return (

@@ -1,0 +1,18 @@
+%app{
+    height: 500px;
+    padding: 20px;
+    scroll-margin-top: 60px;
+}
+
+#about-me, #contact, #links, #resume{
+    @extend %app;
+}
+
+.App > div > div:nth-child(even)  {
+    background: white;
+}
+
+.App > div > div:nth-child(odd)  {
+    color: white;
+    background: rgb(11, 24, 80);
+}

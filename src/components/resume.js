@@ -1,12 +1,8 @@
-const resume_style = {
-    background: 'white',
-    height: '500px',
-    padding: '20px'
-}
+import React from 'react'
 
 function Resume() {
     return (
-        <div style={resume_style}>
+        <div id="resume">
             <strong>Resume</strong>
         </div>
     );

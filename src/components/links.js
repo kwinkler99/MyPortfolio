@@ -1,12 +1,8 @@
-const links_style = {
-    background: 'rgba(74, 183, 255, 0.692)',
-    height: '500px',
-    padding: '20px'
-}
+import React from 'react'
 
 function Links() {
     return (
-        <div style={links_style}>
+        <div id="links">
             <strong>Links</strong>
         </div>
     );

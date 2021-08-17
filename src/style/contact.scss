@@ -1,0 +1,23 @@
+#contact {
+    text-align: center;
+    height: 350px;
+
+    .contact_data{
+        margin: auto;
+        width: 500px;
+        text-align: justify;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+        a{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            color: black;
+            text-decoration: none;
+        }
+        a:hover {
+            color: rgb(0, 32, 177)
+        }
+    }
+}
