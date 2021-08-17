@@ -8,6 +8,10 @@
     @extend %app;
 }
 
+#contact{
+    height: 350px;
+}
+
 .App > div > div:nth-child(even)  {
     background: white;
 }
