@@ -3,7 +3,7 @@
         width: 0px;
     }
     30%{
-        width: 10px;
+        width: 100px;
     }
     100%{
         width: 0px;
@@ -12,23 +12,45 @@
 
 @keyframes falling {
     0% {
-        transform: translateX(0);
+        transform: translate(0, 0) rotate(20deg);
     }
     100%{
-        transform: translateX(30px);
+        transform: translate(400px, 200px) rotate(40deg);
     }
 }
 
 @keyframes head {
     0%{
-        width: 0px;
+        width: 2px;
     }
     50% {
-        width: 15px
+        width: 6px
     }
     100% {
-        width: 0px;
+        width: 2px;
     }
+}
+
+@keyframes roundShadow {
+    0% {
+        box-shadow: inset 0px -10px 20px rgba(0,0,0,.5);
+    }
+    74% {
+        box-shadow: inset 150px -10px 20px rgba(0,0,0,.5);
+    }
+    75% {
+        box-shadow: inset -150px 900px 20px rgba(0,0,0,.5);
+    }
+    76% {
+        box-shadow: inset -150px -10px 20px rgba(0,0,0,.5);
+    }
+    100% {
+        box-shadow: inset 0px -10px 20px rgba(0,0,0,.5);
+    }
+}
+
+@keyframes roundSun {
+    
 }
 
 #about-me { 
@@ -39,39 +61,119 @@
     }
 
     .cosmos{
+        position: relative;
+        left: 0;
         margin: auto;
         width: 100%;
+        height: 100%;
+        overflow: hidden;
+
         .star{
             position: absolute;
             height: 2px;
             background: linear-gradient(to right, rgba(0,0,0,0),rgba(255, 255, 255, 0.4)); 
             border-radius: 100%;
             filter: drop-shadow(2px 0px 5px #2f00ff);
-            animation: tail 1.5s ease-in-out infinite,
-                        falling 1.5s ease-in-out infinite;
+            animation: tail 2s ease-in-out,
+                        falling 2s ease-in-out;
+            transform: rotateZ(20deg);
         }
         .star::before, .star::after {
             content: '';
             position: absolute;
-            right: 0;
+            right: 0;   
             height: 2px;
             background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(255, 255, 255, 0.9) 100%);
             transform: rotateZ(45deg);
             border-radius: 100%;
-            animation: head 1.5s ease-in-out infinite;
+            animation: head 2s ease-in-out infinite ;
         }
         .star::after{
             transform: rotateZ(-45deg);
         }
+        @for $i from 0 through 51 {
+            .star:nth-child(#{$i}) {
+                top: (random(100)) / 100 * 100%;
+                left: (random(100)) / 100 * 100%;
+                animation-delay: $i * 2s;
+            }
+        }
 
+        @mixin background-planet($color){
+            background: radial-gradient(circle at 100px 100px, $color, rgb(71, 71, 71));
+            box-shadow: inset 0px -10px 20px rgba(0,0,0,.5);
+        }
 
+        .planets {
+            position: absolute;
+            height: 400px;
+            width: 100%;
+            bottom: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune, .pluto{
+            border-radius: 100%;
+            margin: 10px;
+            animation: roundShadow 6s ease infinite,
+                        roundSun 6s ease infinite;
+        }
+
+        .sun {
+            width: 300px;
+            height: 300px;
+            border-radius: 100%;
+            @include background-planet(rgb(255, 72, 26));
+        }
+
+        .mercury {
+            width: 40px;
+            height: 40px;
+            @include background-planet(rgb(111, 255, 166));
+        }
+
+        .venus {
+            width: 60px;
+            height: 60px;
+            @include background-planet(rgb(255, 101, 12));
+        }
+        .earth {
+            width: 80px;
+            height: 80px;
+            @include background-planet(rgb(208, 220, 255));
+        }
+        .mars {
+            width: 40px;
+            height: 40px;
+            @include background-planet(rgb(201, 161, 76));
+        }
+        .jupiter {
+            width: 120px;
+            height: 120px;
+            @include background-planet(rgb(165, 126, 0));
+        }
+        .saturn {
+            width: 100px;
+            height: 100px;
+            @include background-planet(rgb(165, 126, 0));
+        }
+        .uranus {
+            width: 80px;
+            height: 80px;
+            @include background-planet(rgb(26, 73, 228));
+        }
+        .neptune {
+            width: 80px;
+            height: 80px;
+            @include background-planet(rgb(38, 189, 209));
+        }
+        .pluto {
+            width: 20px;
+            height: 20px;
+            @include background-planet(rgb(119, 119, 119));
+        }
     }
 }
 
-@for $i from 0 through 21 {
-    .star:nth-child(#{$i}) {
-        top: (random(100)) / 100 * 100%;
-        left: random(100vw) / 100 * 100%;
-        animation-delay: 1s;
-    }
-}
