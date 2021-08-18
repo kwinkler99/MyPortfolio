@@ -55,7 +55,7 @@
 
 #about-me { 
     text-align: center;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 100px);
     h1{
         font-size: 80px;
         text-shadow: black 1px 0 20px;
@@ -68,7 +68,7 @@
         width: 100%;
         height: 100%;
         overflow: hidden;
-        box-shadow: inset 0px 0px 20em rgba(0,0,0,.4), 0px 0px 20em rgba(0,0,0,.4);
+        box-shadow: inset 0px 0px 20em rgba(0,0,0,.9), 1px 0px 20px black;
 
 
         .star{
@@ -98,7 +98,7 @@
             .star:nth-child(#{$i}) {
                 top: (random(100)) / 100 * 100%;
                 left: (random(100)) / 100 * 100%;
-                animation-delay: $i * 2s;
+                animation-delay: $i * 1.5s;
             }
         }
 
@@ -117,65 +117,97 @@
             align-items: center;
         }
 
-        .mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune, .pluto{
+        .mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune{
             border-radius: 100%;
-            margin: 10px;
             animation: roundShadow 6s ease infinite,
                         roundSun 6s ease infinite;
+            margin: 10px;
         }
 
         .sun {
-            width: 300px;
-            height: 300px;
+            margin: 20px;
+            width: 200px;
+            height: 200px;
             border-radius: 100%;
-            @include background-planet(rgb(255, 72, 26));
+            @include background-planet(#F28C38);
+            box-shadow: 0 0 10px orange,
+                    0 0 30px orange,
+                    0 0 100px yellow,
+                    inset 0 0 80px yellow;
         }
 
         .mercury {
-            width: 40px;
-            height: 40px;
+            width: 60px;
+            height: 60px;
             @include background-planet(rgb(111, 255, 166));
+        }
+        .orbit-mercury {
+            width: 60px;
+            height: 60px;
         }
 
         .venus {
-            width: 60px;
-            height: 60px;
-            @include background-planet(rgb(255, 101, 12));
-        }
-        .earth {
             width: 80px;
             height: 80px;
+            @include background-planet(rgb(255, 101, 12));
+        }
+        .orbit-venus {
+            width: 80px;
+            height: 80px;
+        }
+        .earth {
+            width: 100px;
+            height: 100px;
             @include background-planet(rgb(208, 220, 255));
         }
+        .orbit-earth {
+            width: 100px;
+            height: 100px;
+        }
         .mars {
-            width: 40px;
-            height: 40px;
+            width: 60px;
+            height: 60px;
             @include background-planet(rgb(201, 161, 76));
         }
+        .orbit-mars {
+            width: 60px;
+            height: 60px;
+        }
         .jupiter {
+            width: 140px;
+            height: 140px;
+            @include background-planet(rgb(165, 126, 0));
+        }
+        .orbit-jupiter {
+            width: 140px;
+            height: 140px;
+        }
+        .saturn {
             width: 120px;
             height: 120px;
             @include background-planet(rgb(165, 126, 0));
         }
-        .saturn {
-            width: 100px;
-            height: 100px;
-            @include background-planet(rgb(165, 126, 0));
+        .orbit-saturn {
+            width: 120px;
+            height: 120px;
         }
         .uranus {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             @include background-planet(rgb(26, 73, 228));
         }
+        .orbit-uranus {
+            width: 100px;
+            height: 100px;
+        }
         .neptune {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             @include background-planet(rgb(38, 189, 209));
         }
-        .pluto {
-            width: 20px;
-            height: 20px;
-            @include background-planet(rgb(119, 119, 119));
+        .orbit-neptune {
+            width: 100px;
+            height: 100px;
         }
     }
 }
