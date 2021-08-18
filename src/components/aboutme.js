@@ -13,7 +13,7 @@ function AboutMe() {
     return (
         <div id="about-me">
             <div className="cosmos">
-                <h1>Hello</h1>
+                <h1>Katarzyna Winkler</h1>
                 {stars}
                 <div className="planets">
                     <span className="sun"></span>

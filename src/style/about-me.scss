@@ -21,13 +21,13 @@
 
 @keyframes head {
     0%{
-        width: 2px;
+        width: 4px;
     }
     50% {
         width: 6px
     }
     100% {
-        width: 2px;
+        width: 4px;
     }
 }
 
@@ -55,9 +55,10 @@
 
 #about-me { 
     text-align: center;
-
+    height: calc(100vh - 80px);
     h1{
         font-size: 80px;
+        text-shadow: black 1px 0 20px;
     }
 
     .cosmos{
@@ -67,6 +68,8 @@
         width: 100%;
         height: 100%;
         overflow: hidden;
+        box-shadow: inset 0px 0px 20em rgba(0,0,0,.4), 0px 0px 20em rgba(0,0,0,.4);
+
 
         .star{
             position: absolute;
@@ -106,7 +109,7 @@
 
         .planets {
             position: absolute;
-            height: 400px;
+            height: 80%;
             width: 100%;
             bottom: 0;
             display: flex;

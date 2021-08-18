@@ -4,8 +4,12 @@
     scroll-margin-top: 60px;
 }
 
-#about-me, #contact, #links, #resume{
+#contact, #links, #resume{
     @extend %app;
+}
+#about-me{
+    padding: 20px;
+    scroll-margin-top: 60px;
 }
 
 #contact{
