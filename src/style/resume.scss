@@ -1,0 +1,74 @@
+#resume { 
+    text-align: center;
+    margin: auto;
+    position: relative;
+
+    .small-window{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -260px 0 0 -350px;
+        padding: 30px;
+        height: 450px;
+        width: 700px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 0 3px 100px rgba(0, 0, 0, 0.2);
+
+        div{
+            padding: 20px;
+            width: 300px;
+        }
+        h1{
+            font-size: 40px;
+            text-shadow: black 1px 0 3px;
+        }
+
+        form {
+            margin: auto;
+            padding: 20px;
+            width: 300px;
+            height: 400px;
+            display: grid;
+            grid-template-columns: auto;
+            border-radius: 10px;
+            background: rgb(46, 46, 46);
+            color: white;
+            font-size: 20px;
+
+            input {
+                margin: auto;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                width: 250px;
+                color: white;
+                font-size: 15px;
+                background: rgb(46, 46, 46);
+                border: none;
+                outline: none;
+                border-bottom: 2px solid white;
+            }
+            button {
+                margin: auto;
+                width: 250px;
+                height: 40px;
+                border-radius: 5px;
+                border: 3px solid rgb(22, 47, 160);
+                color: white;
+                background: rgb(46, 46, 46);
+                cursor: pointer;
+            }
+            button:active {
+                border: 3px solid rgb(30, 64, 216);
+
+            }
+            p{
+                color: red;
+                margin: 0;
+                font-size: 15px;
+            }
+        }
+    }
+}

@@ -49,13 +49,8 @@
     }
 }
 
-@keyframes roundSun {
-    
-}
-
 #about-me { 
     text-align: center;
-    height: calc(100vh - 100px);
     h1{
         font-size: 80px;
         text-shadow: black 1px 0 20px;
@@ -98,7 +93,7 @@
             .star:nth-child(#{$i}) {
                 top: (random(100)) / 100 * 100%;
                 left: (random(100)) / 100 * 100%;
-                animation-delay: $i * 1.5s;
+                animation-delay: $i * 0.5s;
             }
         }
 
@@ -119,95 +114,93 @@
 
         .mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune{
             border-radius: 100%;
-            animation: roundShadow 6s ease infinite,
-                        roundSun 6s ease infinite;
-            margin: 10px;
+            animation: roundShadow 4s ease infinite;
         }
 
         .sun {
-            margin: 20px;
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             border-radius: 100%;
             @include background-planet(#F28C38);
             box-shadow: 0 0 10px orange,
                     0 0 30px orange,
                     0 0 100px yellow,
                     inset 0 0 80px yellow;
+            margin: 20px;
         }
 
         .mercury {
-            width: 60px;
-            height: 60px;
+            width: 40px;
+            height: 40px;
             @include background-planet(rgb(111, 255, 166));
         }
         .orbit-mercury {
-            width: 60px;
-            height: 60px;
+            width: 40px;
+            height: 40px;
         }
 
         .venus {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             @include background-planet(rgb(255, 101, 12));
         }
         .orbit-venus {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
         }
         .earth {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             @include background-planet(rgb(208, 220, 255));
         }
         .orbit-earth {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
         }
         .mars {
-            width: 60px;
-            height: 60px;
+            width: 40px;
+            height: 40px;
             @include background-planet(rgb(201, 161, 76));
         }
         .orbit-mars {
-            width: 60px;
-            height: 60px;
+            width: 40px;
+            height: 40px;
         }
         .jupiter {
-            width: 140px;
-            height: 140px;
+            width: 120px;
+            height: 120px;
             @include background-planet(rgb(165, 126, 0));
         }
         .orbit-jupiter {
-            width: 140px;
-            height: 140px;
-        }
-        .saturn {
             width: 120px;
             height: 120px;
+        }
+        .saturn {
+            width: 100px;
+            height: 100px;
             @include background-planet(rgb(165, 126, 0));
         }
         .orbit-saturn {
-            width: 120px;
-            height: 120px;
-        }
-        .uranus {
             width: 100px;
             height: 100px;
+        }
+        .uranus {
+            width: 80px;
+            height: 80px;
             @include background-planet(rgb(26, 73, 228));
         }
         .orbit-uranus {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
         }
         .neptune {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             @include background-planet(rgb(38, 189, 209));
         }
         .orbit-neptune {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
         }
     }
 }

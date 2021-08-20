@@ -1,15 +1,11 @@
 %app{
-    height: 700px;
+    height: calc(100vh - 100px);
     padding: 20px;
     scroll-margin-top: 60px;
 }
 
-#contact, #links, #resume{
+#about-me, #contact, #links, #resume{
     @extend %app;
-}
-#about-me{
-    padding: 20px;
-    scroll-margin-top: 60px;
 }
 
 #contact{

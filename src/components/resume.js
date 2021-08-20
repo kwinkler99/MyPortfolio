@@ -1,9 +1,88 @@
 import React from 'react'
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import '../style/resume.scss'
+import country from 'country-list-js';
 
 function Resume() {
     return (
         <div id="resume">
-            <strong>Resume</strong>
+            <div className="small-window">
+                <div>
+                    <h1>Form</h1>
+                    <p>This is small form with validation. You can complete it :)</p>
+                </div>
+                <Formik 
+                    initialValues={{ 
+                        full_name: '', 
+                        email: '',
+                        phone: '',
+                        country: '',
+                    }}
+                    validate={values => {
+                        const errors = {};
+                        if(!values.full_name) {
+                            errors.full_name = 'Required';
+                        } else if (
+                            !/^([\w]{3,})+\s+([\w\s]{3,})+$/i.test(values.full_name)
+                        ) {
+                            errors.full_name = 'You have to put your name and surname'
+                        }
+
+                        if(!values.email) {
+                            errors.email = 'Required';
+                        } else if (
+                            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+                        ){
+                            errors.email = 'Invalid email address';
+                        }
+
+                        if(!values.phone) {
+                            errors.phone = 'Required';
+                        } 
+                        else if(
+                            !/^\+(?:[0-9] ?){6,14}[0-9]$/i.test(values.phone)
+                        ) {
+                            errors.phone = 'Invalid phone'
+                        }
+
+                        if(!values.country) {
+                            errors.country = 'Required';
+                        } 
+                        else if (!country.findByName(values.country)) {
+                            errors.country = "This country doesn't exist"
+                        }
+                        return errors;
+                    }}
+                    onSubmit={(values, actions) => {
+                        setTimeout(() => {
+                            alert(JSON.stringify(values, null, 2));
+                          }, 400);
+                          actions.resetForm({
+                            values: {
+                                full_name: '', 
+                                email: '',
+                                phone: '',
+                                country: '',
+                            },
+                        });
+                    }}
+                >
+                {() => (
+                    <Form>
+                        <Field type="full_name" name="full_name" placeholder="Full name"/>
+                        <ErrorMessage name="full_name" component="p" />
+                        <Field type="email" name="email" placeholder="email" />
+                        <ErrorMessage name="email" component="p" />
+                        <Field type="phone" name="phone" placeholder="phone"/>
+                        <ErrorMessage name="phone" component="p" />
+                        <Field type="country" name="country" placeholder="country"/>
+                        <ErrorMessage name="country" component="p" />
+                        <button type="submit">Submit</button>
+                    </Form> 
+
+                )}
+                </Formik> 
+            </div>
         </div>
     );
 }
