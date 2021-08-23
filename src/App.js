@@ -1,7 +1,7 @@
 import Navbar from "./components/navbar";
-import AboutMe from "./components/aboutme";
-import Resume from "./components/resume";
-import Links from "./components/links";
+import Home from "./components/home";
+import MyForm from "./components/form";
+import AboutMe from "./components/about-me";
 import Contact from "./components/contact";
 import './style/app.scss'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -17,9 +17,9 @@ function App() {
     <div className="App">
       <Navbar />
       <div>
+        <Home />
+        <MyForm />
         <AboutMe />
-        <Resume />
-        <Links />
         <Contact />
       </div>
     </div>

@@ -1,11 +1,11 @@
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import '../style/resume.scss'
+import '../style/form.scss'
 import country from 'country-list-js';
 
-function Resume() {
+function MyForm() {
     return (
-        <div id="resume">
+        <div id="form">
             <div className="small-window">
                 <div>
                     <h1>Form</h1>
@@ -87,5 +87,5 @@ function Resume() {
     );
 }
   
-export default Resume;
+export default MyForm;
   

@@ -1,9 +1,9 @@
 import React from 'react'
-import '../style/about-me.scss'
+import '../style/home.scss'
 
 
 
-function AboutMe() {
+function Home() {
 
     const stars = []
     for(let i = 0; i < 50; i++){
@@ -11,7 +11,7 @@ function AboutMe() {
     }
     
     return (
-        <div id="about-me">
+        <div id="home">
             <div className="cosmos">
                 <h1>Katarzyna Winkler</h1>
                 {stars}
@@ -39,5 +39,5 @@ function AboutMe() {
     );
 }
   
-export default AboutMe;
+export default Home;
   
