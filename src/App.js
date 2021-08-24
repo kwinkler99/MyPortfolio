@@ -20,9 +20,9 @@ function App() {
         homeRect = document.getElementById("home").getBoundingClientRect(),
         formRect = document.getElementById("form").getBoundingClientRect(),
         aboutMeRect = document.getElementById("about-me").getBoundingClientRect(),
-        offsetHome   = homeRect.top - bodyRect.top + 60,
-        offsetForm   = formRect.top - bodyRect.top + 60,
-        offsetAboutMe   = aboutMeRect.top - bodyRect.top + 60;
+        offsetHome = homeRect.top - bodyRect.top + 60,
+        offsetForm = formRect.top - bodyRect.top + 60,
+        offsetAboutMe = aboutMeRect.top - bodyRect.top + 60;
 
 
     let urlHash = ""

@@ -3,7 +3,6 @@
 
     .contact_data{
         margin: auto;
-        width: 500px;
         text-align: justify;
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 
@@ -17,6 +16,18 @@
         }
         a:hover {
             color: rgb(11, 24, 80)
+        }
+    }
+
+    @media ( min-width: 900px ) {
+        .contact_data {
+            width: 600px;
+        }
+    }
+
+    @media ( max-width: 899px ) {
+        .contact_data {
+            width: 70%;
         }
     }
 }

@@ -2,30 +2,19 @@
     text-align: center;
     margin: auto;
     position: relative;
-
-    .small-window{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin: -255px 0 0 -430px;
+     
+    .small-window {
         padding: 30px;
-        height: 450px;  
-        width: 800px;     
         display: flex;
         justify-content: center;
         align-items: center;
         border-radius: 10px;
         box-shadow: 0 3px 100px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
 
-        div{
+        div {
             padding: 20px;
-            width: 300px;
-            margin-left: 20px;;
-            
-            h1{
-                font-size: 40px;
-                text-shadow: black 1px 0 3px;
-            }
+
         }
 
         form {
@@ -71,6 +60,85 @@
                 color: red;
                 margin: 0;
                 font-size: 15px;
+            }
+        }
+
+    }
+
+
+
+    @media (min-width: 900px) {
+        .small-window{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -255px 0 0 -430px;
+            height: 450px;  
+            width: 800px;     
+
+
+            div{
+                width: 300px;
+                margin-left: 20px;;
+                
+                h1{
+                    font-size: 40px;
+                    text-shadow: black 1px 0 3px;
+                }
+            }
+
+            form {
+                margin-right: 20px;
+                width: 300px;
+                height: 400px;
+
+                input {
+                    width: 250px;
+                    font-size: 15px;
+                }
+                button {
+                    width: 250px;
+                    height: 40px;
+                }
+                p{
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+    @media(max-width: 899px) {
+        .small-window{
+            margin: auto;
+            height: calc(100% - 60px);  
+            width: 80vw;     
+            flex-direction: column;
+
+            div{
+                width: 60%;
+                
+                h1{
+                    font-size: 60px;
+                    text-shadow: black 1px 0 3px;
+                }
+            }
+
+            form {
+                margin: auto;
+                width: 60%;
+                height: 60%;
+
+                input {
+                    width: 90%;
+                    font-size: 18px;
+                }
+                button {
+                    width: 90%;
+                    height: 60px;
+                    font-size: 20px;
+                }
+                p{
+                    font-size: 16px;
+                }
             }
         }
     }
