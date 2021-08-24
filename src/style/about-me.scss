@@ -24,7 +24,7 @@
         }
     }
 
-    @media ( min-width: 900px ) {
+    @media ( min-width: 900px )  {
         .small-window {
             position: absolute;
             top: 50%;
@@ -51,11 +51,11 @@
         .small-window {
             margin: auto;
             height: calc(100% - 60px);  
-            width: 80vw;     
+            width: 80vw;   
             flex-direction: column;
 
             img {
-                width: 60%;
+                width: 50%;
             }
 
             div {
@@ -65,4 +65,18 @@
             }
         }
     }
+
+    @media (min-width: 321px) and (max-width: 580px) {
+        .small-window {
+          width: 460px;
+          height: 460px;
+        }
+      }
+      
+      @media (min-width: 10px) and (max-width: 320px) {
+        .small-window {
+          width: 360px;
+          height: 360px;
+        }
+      }
 }

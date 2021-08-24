@@ -1,11 +1,26 @@
-%app{
-    height: calc(100vh - 100px);
+@mixin app($data){
+    height: $data;
     padding: 20px;
     scroll-margin-top: 60px;
 }
 
 #home, #contact, #about-me, #form{
-    @extend %app;
+    @media ( min-height: 600px) and (min-width: 900px) {
+        @include app(calc(100vh - 100px))
+    }
+
+    @media ( max-height: 599px) and (min-width: 900px) {
+        @include app(500px)
+    }
+
+    @media ( min-height: 790px) and (max-width: 899px) {
+        @include app(calc(100vh - 100px))
+    }
+
+    @media ( max-height: 789px) and (max-width: 899px) {
+        @include app(690px)
+    }
+
 }
 
 #contact{
