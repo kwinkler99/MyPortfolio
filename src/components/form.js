@@ -9,7 +9,7 @@ function MyForm() {
             <div className="small-window">
                 <div>
                     <h1>Form</h1>
-                    <p>This is small form with validation. You can complete it :)</p>
+                    <p>This is small form with validation.<br/>You can complete it :)</p>
                 </div>
                 <Formik 
                     initialValues={{ 

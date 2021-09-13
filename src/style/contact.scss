@@ -30,4 +30,22 @@
             width: 70%;
         }
     }
+
+    @media ( max-width: 420px ) {
+        a{
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+            color: black;
+            text-decoration: none;
+
+            p {
+                display: none;
+            }
+        }
+        a:hover {
+            color: rgb(11, 24, 80)
+        }
+
+    }
 }

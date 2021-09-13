@@ -108,7 +108,7 @@
         .small-window{
             margin: auto;
             height: calc(100% - 60px);  
-            width: 80vw;     
+            width: calc(100% - 60px);     
             flex-direction: column;
 
             div{
@@ -124,6 +124,7 @@
                 margin: auto;
                 width: 60%;
                 height: 60%;
+                position: relative;
 
                 input {
                     width: 90%;
@@ -136,6 +137,44 @@
                 }
                 p{
                     font-size: 16px;
+                }
+            }
+        }
+    }
+
+    @media ( max-width: 321px ) {
+        .small-window{
+            margin: auto;
+            height: calc(100% - 60px);  
+            width: calc(100% - 60px);     
+            flex-direction: column;
+
+            div{
+                width: 100%;
+                
+                h1{
+                    font-size: 30px;
+                    text-shadow: black 1px 0 3px;
+                }
+            }
+
+            form {
+                margin: auto;
+                width: 90%;
+                height: 90%;
+                right: 10px;
+
+                input {
+                    width: 90%;
+                    font-size: 18px;
+                }
+                button {
+                    width: 90%;
+                    height: 40px;
+                    font-size: 16px;
+                }
+                p{
+                    font-size: 10px;
                 }
             }
         }

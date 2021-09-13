@@ -25,13 +25,12 @@ function App() {
         offsetAboutMe = aboutMeRect.top - bodyRect.top + 60;
 
 
-    let urlHash = ""
-
     let first_condition = ( offsetForm / 2 ) >= (window.scrollY + 60) && (window.scrollY + 60) >= offsetHome
     let second_condition = offsetForm + ( offsetForm / 2 ) > (window.scrollY + 60) && (window.scrollY + 60) > ( offsetForm / 2 )
     let third_condition = offsetAboutMe + 175 >= (window.scrollY + 60) && (window.scrollY + 60) >= offsetForm + ( offsetForm / 2 )
     let fourth_condition = offsetAboutMe + 175 < (window.scrollY + 60)
 
+    let urlHash = ""
     if ( first_condition ) {
       urlHash = "#home";
     } else if ( second_condition ) {

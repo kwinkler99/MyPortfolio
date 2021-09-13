@@ -51,32 +51,37 @@
         .small-window {
             margin: auto;
             height: calc(100% - 60px);  
-            width: 80vw;   
+            width: calc(100% - 60px);   
             flex-direction: column;
 
             img {
-                width: 50%;
+                width: 60%;
             }
 
             div {
-                width: 60%;
+                width: 70%;
                 font-size: 16px;
                 line-height: 1.6;
             }
         }
     }
 
-    @media (min-width: 321px) and (max-width: 580px) {
+    @media ( max-width: 321px ) {
         .small-window {
-          width: 460px;
-          height: 460px;
+            margin: auto;
+            height: calc(100% - 60px);  
+            width: calc(100% - 60px);   
+            flex-direction: column;
+
+            img {
+                width: 100%;
+            }
+
+            div {
+                width: 100%;
+                font-size: 16px;
+                line-height: 1.6;
+            }
         }
-      }
-      
-      @media (min-width: 10px) and (max-width: 320px) {
-        .small-window {
-          width: 360px;
-          height: 360px;
-        }
-      }
+    }
 }
