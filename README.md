@@ -1,9 +1,3 @@
-#My portfolio
-
-You can run it on website: 
-https://awesome-volhard-a5fe5d.netlify.app
-
-
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
@@ -30,4 +24,4 @@ or
 $ yarn start
 ```
 
-Also you can open it [here](https://awesome-volhard-a5fe5d.netlify.app){:target="_blank"}.
+Also you can open it [here](https://awesome-volhard-a5fe5d.netlify.app).
