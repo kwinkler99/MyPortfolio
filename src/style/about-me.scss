@@ -56,12 +56,14 @@
 
             img {
                 width: 60%;
+                margin-top: 50px;
             }
 
             div {
-                width: 70%;
+                width: 100%;
                 font-size: 16px;
                 line-height: 1.6;
+                margin-bottom: 50px;
             }
         }
     }
@@ -74,13 +76,15 @@
             flex-direction: column;
 
             img {
-                width: 100%;
+                width: 80%;
+                margin-top: 50px;
             }
 
             div {
                 width: 100%;
                 font-size: 16px;
                 line-height: 1.6;
+                margin-bottom: 50px;
             }
         }
     }

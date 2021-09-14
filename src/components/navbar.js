@@ -23,7 +23,7 @@ function Navbar() {
             <strong style={{marginLeft: '10px'}}>KATARZYNA WINKLER</strong>
             <span className="mediaButtonOpenNav" style={{fontSize: '25px', cursor: 'pointer'}} onClick={() => openNav()}>&#9776;</span>
             <div className="nav-buttons">
-                <span className="mediaButtonCloseNav" style={{fontSize: '40px', cursor: 'pointer'}} onClick={() => closeNav()}>&times;</span>
+                <span className="mediaButtonCloseNav" style={{fontSize: '40px', color: 'white', cursor: 'pointer'}} onClick={() => closeNav()}>&times;</span>
                 {buttons}                
             </div>
         </nav>
