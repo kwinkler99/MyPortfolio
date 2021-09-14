@@ -124,9 +124,9 @@
                     --startPositionDeg: calc(6deg*#{$i});
                     transform: rotate(calc(-45deg + var(--startPositionDeg)));
                     @if $i <= 9 {
-                        animation: roundLeft 5s linear;
+                        animation: roundLeft 2.5s linear;
                     } @else {
-                        animation: roundRight 5s linear;
+                        animation: roundRight 2.5s linear;
                     }
                 }
             }
@@ -156,8 +156,11 @@
                 .char-#{$i} {
                     --startPositionDeg: calc(6deg*#{$i});
                     transform: rotate(calc(-45deg + var(--startPositionDeg)));
-                    animation: round 5s linear;
-                
+                    @if $i <= 9 {
+                        animation: roundLeft 2.5s linear;
+                    } @else {
+                        animation: roundRight 2.5s linear;
+                    }
                 }
             }
         }
