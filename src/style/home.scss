@@ -113,7 +113,7 @@
                 .char-#{$i} {
                     --startPositionDeg: calc(6deg*#{$i});
                     transform: rotate(calc(-45deg + var(--startPositionDeg)));
-                    animation: round 8s linear;
+                    animation: round 5s linear;
                 
                 }
             }
@@ -142,7 +142,7 @@
                 .char-#{$i} {
                     --startPositionDeg: calc(6deg*#{$i});
                     transform: rotate(calc(-45deg + var(--startPositionDeg)));
-                    animation: round 8s linear;
+                    animation: round 5s linear;
                 
                 }
             }

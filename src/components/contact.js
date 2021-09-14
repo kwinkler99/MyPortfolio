@@ -12,10 +12,10 @@ function Contact() {
                         <FontAwesomeIcon icon={['fab', 'github-alt']} size="3x" />
                         <p>github.com/kwinkler99</p>
                     </a>
-                    <a href="www.google.pl">
+                    <a href="https://www.linkedin.com/in/katarzyna-winkler-b52816207/">
                         
-                        <FontAwesomeIcon icon={['fab', 'firefox']} size="3x" />
-                        <p>This page</p>
+                        <FontAwesomeIcon icon={['fab', 'linkedin-in']} size="3x" />
+                        <p>linkedin.com/katarzyna-winkler</p>
                     </a>
                     <a href="mailto:kasia.winkler99@gmail.com">
                         <FontAwesomeIcon icon={['far', 'envelope']} size="3x" />
