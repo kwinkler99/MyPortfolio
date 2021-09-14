@@ -4,6 +4,12 @@ import '../style/form.scss'
 import country from 'country-list-js';
 
 function MyForm() {
+    let country_names = country.names();
+
+    const list = country_names.map(country => {
+        return <option key={country} value={country}></option>
+    })
+
     return (
         <div id="form">
             <div className="small-window">
@@ -20,6 +26,7 @@ function MyForm() {
                     }}
                     validate={values => {
                         const errors = {};
+
                         if(!values.full_name) {
                             errors.full_name = 'Required';
                         } else if (
@@ -71,12 +78,18 @@ function MyForm() {
                     <Form>
                         <Field type="full_name" name="full_name" placeholder="Full name"/>
                         <ErrorMessage name="full_name" component="p" />
+
                         <Field type="email" name="email" placeholder="email" />
                         <ErrorMessage name="email" component="p" />
+
+                        <Field type="country" name="country" list="country-name" placeholder="country"/>
+                            <datalist id="country-name">
+                                {list}
+                            </datalist>
+                        <ErrorMessage name="country" component="p" />
+
                         <Field type="phone" name="phone" placeholder="phone"/>
                         <ErrorMessage name="phone" component="p" />
-                        <Field type="country" name="country" placeholder="country"/>
-                        <ErrorMessage name="country" component="p" />
                         <button type="submit">Submit</button>
                     </Form> 
 
