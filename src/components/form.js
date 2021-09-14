@@ -3,6 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import '../style/form.scss'
 import country from 'country-list-js';
 
+
 function MyForm() {
     let country_names = country.names();
 
@@ -90,6 +91,7 @@ function MyForm() {
 
                         <Field type="phone" name="phone" placeholder="phone"/>
                         <ErrorMessage name="phone" component="p" />
+
                         <button type="submit">Submit</button>
                     </Form> 
 

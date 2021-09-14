@@ -11,7 +11,11 @@ function Navbar() {
     }
 
     const closeNav = () => {
-        document.getElementsByClassName("nav-buttons")[0].style.width = "0px";
+        const mediaQuery = window.matchMedia('(max-width: 650px)')
+
+        if (mediaQuery.matches) {
+            document.getElementsByClassName("nav-buttons")[0].style.width = "0px";
+        }
     }
 
     return (

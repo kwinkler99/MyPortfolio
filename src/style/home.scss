@@ -31,13 +31,23 @@
     }
 }
 
-@keyframes round {
+@keyframes roundLeft {
     0% {
-        transform: rotate(calc(-45deg + var(--startPositionDeg)));
+        transform: rotate(calc(155deg + var(--startPositionDeg)));
     }
 
     100% {
         transform: rotate(calc(315deg + var(--startPositionDeg)));        
+    }
+}
+
+@keyframes roundRight {
+    0% {
+        transform: rotate(calc(105deg + var(--startPositionDeg)));
+    }
+
+    100% {
+        transform: rotate(calc(-45deg + var(--startPositionDeg)));        
     }
 }
 
@@ -113,10 +123,14 @@
                 .char-#{$i} {
                     --startPositionDeg: calc(6deg*#{$i});
                     transform: rotate(calc(-45deg + var(--startPositionDeg)));
-                    animation: round 5s linear;
-                
+                    @if $i <= 9 {
+                        animation: roundLeft 5s linear;
+                    } @else {
+                        animation: roundRight 5s linear;
+                    }
                 }
             }
+
         }
 
         .planet {

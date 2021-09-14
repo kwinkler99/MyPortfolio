@@ -23,6 +23,7 @@
 
     .nav-buttons{
         @include nav_style;
+        width: auto;
         overflow: hidden;
 
         .mediaButtonCloseNav {
