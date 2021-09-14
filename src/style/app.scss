@@ -4,7 +4,11 @@
     scroll-margin-top: 60px;
 }
 
-#home, #contact, #about-me, #form{
+#home {
+    @include app(calc(100vh - 100px));
+}
+
+#contact, #about-me, #form{
     @media ( min-height: 600px) and (min-width: 900px) {
         @include app(calc(100vh - 100px))
     }

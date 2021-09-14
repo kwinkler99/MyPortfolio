@@ -43,26 +43,6 @@
 
 #home { 
     text-align: center;
-    h1{
-        font-size: 45px;
-        span {
-            position: absolute;
-            height: 350px;
-            width: 50px;
-            left: calc(50% - 25px);
-            top: calc(50% - 350px);
-            transform-origin: bottom center;
-        }
-
-        @for $i from 0 through 17 {
-            .char-#{$i} {
-                --startPositionDeg: calc(6deg*#{$i});
-                transform: rotate(calc(-45deg + var(--startPositionDeg)));
-                animation: round 8s linear;
-            
-            }
-        }
-    }
 
     .cosmos{
         position: relative;
@@ -106,12 +86,8 @@
         }
 
         .planet {
-            height: 400px;
-            width: 400px;
             border-radius: 50%;
             position: absolute;
-            top: calc(50% - 200px);
-            left: calc(50% - 200px);
             background: radial-gradient(circle at 100px 100px, #F28C38, rgb(71, 71, 71));
             box-shadow: 0 0 10px orange,
                     0 0 30px orange,
@@ -121,5 +97,133 @@
         }
 
     }
+
+    @media (min-width: 771px) and (min-height: 771px) {
+        h1 {
+            font-size: 45px;
+            span {
+                position: absolute;
+                height: 350px;
+                width: 50px;
+                left: calc(50% - 25px);
+                top: calc(50% - 350px);
+                transform-origin: bottom center;
+            }
+            @for $i from 0 through 17 {
+                .char-#{$i} {
+                    --startPositionDeg: calc(6deg*#{$i});
+                    transform: rotate(calc(-45deg + var(--startPositionDeg)));
+                    animation: round 8s linear;
+                
+                }
+            }
+        }
+
+        .planet {
+            height: 400px;
+            width: 400px;
+            top: calc(50% - 200px);
+            left: calc(50% - 200px);
+        }
+    }
+
+    @media (max-width: 770px), (max-height: 770px) {
+        h1 {
+            font-size: 40px;
+            span {
+                position: absolute;
+                height: 300px;
+                width: 50px;
+                left: calc(50% - 25px);
+                top: calc(50% - 300px);
+                transform-origin: bottom center;
+            }
+            @for $i from 0 through 17 {
+                .char-#{$i} {
+                    --startPositionDeg: calc(6deg*#{$i});
+                    transform: rotate(calc(-45deg + var(--startPositionDeg)));
+                    animation: round 8s linear;
+                
+                }
+            }
+        }
+
+        .planet {
+            height: 350px;
+            width: 350px;
+            top: calc(50% - 175px);
+            left: calc(50% - 175px);
+        }
+    }
+
+    @media (max-width: 670px), (max-height: 670px) {
+        h1 {
+            font-size: 35px;
+            span {
+                height: 250px;
+                top: calc(50% - 250px);
+            }
+        }
+
+        .planet {
+            height: 300px;
+            width: 300px;
+            top: calc(50% - 150px);
+            left: calc(50% - 150px);
+        }
+    }
+
+    @media (max-width: 570px), (max-height: 570px) {
+        h1 {
+            font-size: 30px;
+            span {
+                height: 200px;
+                top: calc(50% - 200px);
+            }
+        }
+
+        .planet {
+            height: 250px;
+            width: 250px;
+            top: calc(50% - 125px);
+            left: calc(50% - 125px);
+        }
+    }
+
+    @media (max-width: 470px), (max-height: 470px) {
+        h1 {
+            font-size: 25px;
+            span {
+                height: 150px;
+                top: calc(50% - 150px);
+            }
+        }
+
+        .planet {
+            height: 200px;
+            width: 200px;
+            top: calc(50% - 100px);
+            left: calc(50% - 100px);
+        }
+    }
+
+    @media (max-width: 370px), (max-height: 370px) {
+        h1 {
+            @for $i from 0 through 17 {
+                .char-#{$i} {
+                    animation: none;
+                
+                }
+            }
+        }
+
+        .planet {
+            height: 150px;
+            width: 150px;
+            top: calc(50% - 75px);
+            left: calc(50% - 75px);
+        }
+    }
 }
+
 
