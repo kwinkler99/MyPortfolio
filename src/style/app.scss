@@ -24,7 +24,8 @@
     }
 
     @media ( min-height: 790px) and (max-width: 899px) {
-        @include app(calc(100vh - 100px))
+        @include app(calc(100vh - 60px));
+        padding: 0;
     }
 
     @media ( max-height: 789px) and (max-width: 899px) {
