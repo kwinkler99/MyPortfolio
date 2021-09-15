@@ -19,7 +19,7 @@
     }
 
     @media ( max-height: 599px) and (min-width: 900px) {
-        @include app(500px);
+        @include app(550px);
         padding: 0;
     }
 
