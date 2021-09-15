@@ -6,6 +6,11 @@
 
 #home {
     @include app(calc(100vh - 100px));
+    
+    @media (max-height: 599px) and (min-width: 900px), ( max-height: 789px) and (max-width: 899px) {
+        @include app(calc(100vh - 60px));
+        padding: 0;
+    }
 }
 
 #contact, #about-me, #form{
@@ -14,7 +19,8 @@
     }
 
     @media ( max-height: 599px) and (min-width: 900px) {
-        @include app(500px)
+        @include app(500px);
+        padding: 0;
     }
 
     @media ( min-height: 790px) and (max-width: 899px) {
@@ -22,9 +28,9 @@
     }
 
     @media ( max-height: 789px) and (max-width: 899px) {
-        @include app(690px)
+        @include app(690px);
+        padding: 0;
     }
-
 }
 
 #contact{

@@ -3,7 +3,7 @@ import '../style/navbar.scss'
 
 function Navbar() {
     const buttons = navbar.buttons.map(item => {
-        return <a href={"#" + item.id} onClick={() => closeNav()} key={item.id}>{item.text}</a>
+        return <a href={"#" + item.id} id={"navbar-" + item.id} onClick={() => closeNav()} key={item.id}>{item.text}</a>
     })
 
     const openNav = () => {

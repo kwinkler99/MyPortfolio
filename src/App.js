@@ -15,6 +15,7 @@ library.add(far)
 
 function App() {
 
+
   function scrollListening() {
     let bodyRect = document.body.getBoundingClientRect(),
         homeRect = document.getElementById("home").getBoundingClientRect(),
@@ -31,22 +32,42 @@ function App() {
     let fourth_condition = offsetAboutMe + 175 < (window.scrollY + 60)
 
     let urlHash = ""
+    let idList = ["navbar-home", "navbar-form", "navbar-about-me", "navbar-contact"]
+    let id = ""
     if ( first_condition ) {
       urlHash = "#home";
+      id = idList[0]
     } else if ( second_condition ) {
       urlHash = "#form";
+      id = idList[1]
     } else if ( third_condition ) {
       urlHash = "#about-me"
+      id = idList[2]
     } else if ( fourth_condition ) {
       urlHash = "#contact"
+      id = idList[3]
     }
 
-    window.history.pushState(null, null, urlHash);
+    for( let i = 0; i < idList.length; i++ ) {
+      if( id === idList[i]){
+        document.getElementById(id).style.color = "rgb(34, 71, 235)"
+      } else {
+        document.getElementById(idList[i]).style.color = "black"
+      }
+    }
+
+    window.history.replaceState(null, null, urlHash);
   }
 
   useEffect(() => {
     window.addEventListener("scroll", scrollListening);
-    
+
+    const currentHref = window.location.href.split("#")[1]
+    if (document.getElementById("navbar-" + currentHref)){
+      document.getElementById("navbar-" + currentHref).style.color = "rgb(34, 71, 235)"
+    } else {
+      document.getElementById("navbar-home").style.color = "rgb(34, 71, 235)"
+    }
     return () => {
       window.removeEventListener("scroll", scrollListening);
     };
