@@ -16,7 +16,7 @@ function MyForm() {
             <div className="small-window">
                 <div>
                     <h1>Form</h1>
-                    <p>This is small form with validation.<br/>You can complete it :)</p>
+                    <p>This is small form with validation.<br/>You can complete it. <br/>(Don't worry, data is not stored. You will see only alert.)</p>
                 </div>
                 <Formik 
                     initialValues={{ 
@@ -77,21 +77,25 @@ function MyForm() {
                 >
                 {() => (
                     <Form>
-                        <Field type="full_name" name="full_name" placeholder="Full name"/>
-                        <ErrorMessage name="full_name" component="p" />
-
-                        <Field type="email" name="email" placeholder="email" />
-                        <ErrorMessage name="email" component="p" />
-
-                        <Field type="country" name="country" list="country-name" placeholder="country"/>
-                            <datalist id="country-name">
-                                {list}
-                            </datalist>
-                        <ErrorMessage name="country" component="p" />
-
-                        <Field type="phone" name="phone" placeholder="phone"/>
-                        <ErrorMessage name="phone" component="p" />
-
+                        <div>
+                            <Field type="full_name" name="full_name" placeholder="Full name"/>
+                            <ErrorMessage name="full_name" component="p" />
+                        </div>
+                        <div>
+                            <Field type="email" name="email" placeholder="Email" />
+                            <ErrorMessage name="email" component="p" />
+                        </div>
+                        <div>
+                            <Field type="country" name="country" list="country-name" placeholder="Country"/>
+                                <datalist id="country-name">
+                                    {list}
+                                </datalist>
+                            <ErrorMessage name="country" component="p" />
+                        </div>
+                        <div>
+                            <Field type="phone" name="phone" placeholder="Phone"/>
+                            <ErrorMessage name="phone" component="p" />
+                        </div>
                         <button type="submit">Submit</button>
                     </Form> 
 
