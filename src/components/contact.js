@@ -12,7 +12,7 @@ function Contact() {
                         <FontAwesomeIcon icon={['fab', 'github-alt']} size="3x" />
                         <p>github.com/kwinkler99</p>
                     </a>
-                    <a href="https://www.linkedin.com/in/katarzyna-winkler-b52816207/">
+                    <a href="https://www.linkedin.com/in/katarzyna-winkler/">
                         
                         <FontAwesomeIcon icon={['fab', 'linkedin-in']} size="3x" />
                         <p>linkedin.com/katarzyna-winkler</p>
