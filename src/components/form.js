@@ -2,6 +2,7 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import '../style/form.scss'
 import country from 'country-list-js';
+import validator from 'validator';
 
 
 function MyForm() {
@@ -39,18 +40,9 @@ function MyForm() {
                         if(!values.email) {
                             errors.email = 'Required';
                         } else if (
-                            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+                            !validator.isEmail(values.email)
                         ){
                             errors.email = 'Invalid email address';
-                        }
-
-                        if(!values.phone) {
-                            errors.phone = 'Required';
-                        } 
-                        else if(
-                            !/^\+(?:[0-9] ?){6,14}[0-9]$/i.test(values.phone)
-                        ) {
-                            errors.phone = 'Invalid phone'
                         }
 
                         if(!values.country) {
@@ -59,6 +51,36 @@ function MyForm() {
                         else if (!country.findByName(values.country)) {
                             errors.country = "This country doesn't exist"
                         }
+
+
+                        let iso2 = ""
+                        let locales = []
+
+                        if(values.country && country.findByName(values.country)){
+                            iso2 = country.findByName(values.country)['code']['iso2']
+                            validator.isMobilePhoneLocales.map(item => {
+                                if(item.split("-")[1] === iso2){
+                                    locales.push(item)
+                                }
+                                return item
+                            })
+
+                            if(locales.length === 0){
+                                locales = "any"
+                            }
+                        } else {
+                            locales = "any"
+                        }
+
+                        if(!values.phone) {
+                            errors.phone = 'Required';
+                        } 
+                        else if(
+                            !validator.isMobilePhone(values.phone, locales)
+                        ) {
+                            errors.phone = 'Invalid phone'
+                        }
+
                         return errors;
                     }}
                     onSubmit={(values, actions) => {
